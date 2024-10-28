@@ -1,0 +1,232 @@
+/* Body Background */
+body {
+    background: linear-gradient(135deg, #1b2a30, #0e181b);
+    color: #e6e6e6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(48, 49, 49, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fcf3e5 !important;
+}
+.nav-link {
+    color: #d2d2d2 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover {
+    color: #ffbb44 !important;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    color: #ffffff;
+    padding: 12rem 0;
+    text-align: center;
+    box-shadow: inset 0 0 0 2000px rgba(20, 20, 20, 0.85);
+    background: linear-gradient(135deg, #1e2f33, #0e1d21);
+}
+.hero-section .display-4 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffbb44;
+    margin-bottom: 1.5rem;
+}
+.hero-section .lead {
+    font-size: 1.25rem;
+    color: #cccccc;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Recommendation Form */
+#recommend-section {
+    background: linear-gradient(135deg, #243a3f, #1c2b2f);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.recommend-title {
+    font-size: 2rem;
+    color: #f0f0f0;
+}
+.form-control {
+    border-radius: 30px;
+    border: none;
+    background-color: #192527;
+    color: #ddd;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+.form-control:focus {
+    outline: none;
+    background-color: #233235;
+    border: 2px solid #ffbb44;
+}
+.btn-outline-light {
+    color: #ffffff;
+    border: 2px solid #ffbb44;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.btn-outline-light:hover {
+    background-color: #ffbb44;
+    color: #1b1b1e;
+    box-shadow: 0 6px 15px rgba(255, 187, 68, 0.5);
+}
+
+/* Footer */
+.footer {
+    background: rgba(63, 62, 62, 0.178);
+    color: #d2d2d2;
+    padding: 2.5rem 0;
+    border-top: 2px solid rgba(255, 187, 68, 0.2); /* Subtle amber border */
+    text-align: center;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #f8f7f7;
+    margin: 0.5rem 0;
+}
+
+
+/* Floating Card Effect */
+.card {
+    background: #243336;
+    color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Gradient Border */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #ffbb44, #ff6a6a);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Card Image */
+.card-img-container {
+    overflow: hidden;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.card-img-top {
+    transition: transform 0.4s ease;
+    height: 260px;
+    object-fit: cover;
+}
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Card Text */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffbb44;
+    margin-top: 10px;
+}
+.card-text {
+    font-size: 0.95rem;
+    color: #cccccc;
+    padding-bottom: 5px;
+}
+
+/* Rounded Buttons */
+.btn-outline-primary {
+    color: #ffbb44;
+    border-color: #ffbb44;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.btn-outline-primary:hover {
+    background-color: #ffbb44;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 187, 68, 0.5);
+}
+
+/* Custom Heading for Top 50 Books */
+.top-books-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffbb44;
+    background: linear-gradient(135deg, #ffbb44, #ff6a6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Recommendations Heading */
+.recommendations-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffbb44;
+    background: linear-gradient(135deg, #ffbb44, #ff6a6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+    margin: 3rem 0 2rem;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    line-height: 1.2;
+}
+
+/* Accent Line Below Heading */
+.recommendations-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #ffbb44, #ff6a6a);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    animation: grow 1s ease-in-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes grow {
+    from { width: 0; opacity: 0; }
+    to { width: 80px; opacity: 1; }
+}

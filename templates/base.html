@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Book Recommender{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-3" >
+    <div class="container">
+        <a class="navbar-brand" href="/">📚 Book Recommender</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Top 50 Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recommend-section">Get Recommendations</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center" style="height: 90vh;">
+    <div class="container text-center text-light">
+        <h1 class="display-4 fw-bold mb-4">Find Your Next Favorite Book</h1>
+        <p class="lead mb-5">We help you explore new books based on your current interests. Dive in and discover something unique!</p>
+        
+        <!-- Search Form -->
+        <div id="recommend-section" class="p-4 bg-dark bg-opacity-75 rounded shadow-lg mx-auto" style="max-width: 600px;">
+            <h2 class="recommend-title mb-3 text-light">Find Recommendations</h2>
+            <form action="/recommend" method="post" class="d-flex justify-content-center align-items-center" onsubmit="return validateForm()">
+                <input type="text" id="bookName" name="book_name" class="form-control me-2" placeholder="Enter book title" required>
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+            <div id="searchFeedback" class="alert alert-warning mt-2" style="display: none;">
+                Please enter a book name.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Block -->
+<div class="container mt-5 py-5">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-4">
+    <div class="container text-center">
+        <p class="footer-text mb-0">© 2024 Book Recommender | Crafted with ❤️ for book lovers</p>
+    </div>
+</footer>
+
+
+<!-- JavaScript and dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

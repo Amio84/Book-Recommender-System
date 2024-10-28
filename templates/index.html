@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Top 50 Books{% endblock %}
+
+{% block content %}
+<h1 class="top-books-heading">Top 50 Books</h1>
+
+<div class="row mt-4">
+    {% for _, book in books.iterrows() %}
+    <div class="col-6 col-md-4 col-lg-2 mb-4">
+        <div class="card h-100 bg-dark text-light shadow-sm border-0">
+            <img src="{{ book['Image-URL-M'] }}" 
+                 class="card-img-top rounded-top" 
+                 alt="Cover of {{ book['Book-Title'] }}" 
+                 style="height: 250px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-warning">{{ book['Book-Title'] }}</h5>
+                <p class="card-text text-muted mb-0">Author: 
+                    <span class="text-light">{{ book['Book-Author'] }}</span>
+                </p>
+                <p class="card-text text-muted mb-0">Published: 
+                    <span class="text-light">{{ book['Year-Of-Publication'] }}</span>
+                </p>
+                <p class="card-text mb-0">
+                    <small>Votes: {{ book['num_ratings'] }}</small>
+                </p>
+                <p class="card-text mb-0">
+                    <small>Rating: 
+                        <span class="text-success">{{ book['avg_rating']|round(2) }}</span>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
